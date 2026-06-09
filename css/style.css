@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+:root {
+  --red: #d0021b;
+  --black: #1a1a1a;
+  --dark-gray: #333;
+  --mid-gray: #666;
+  --light-gray: #f0f0f0;
+  --border: #e0e0e0;
+  --white: #ffffff;
+  --max-width: 1100px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 15px;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--red);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-star {
+  width: 44px;
+  height: 44px;
+  background: var(--red);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%,
+    79% 91%, 50% 70%, 21% 91%, 32% 57%,
+    2% 35%, 39% 35%
+  );
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: 'Source Serif 4', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+nav {
+  display: flex;
+  gap: 0;
+}
+
+nav a {
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+nav a.nav-politik {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 30px 20px 50px;
+  min-height: 60vh;
+}
+
+.section-heading {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--black);
+  margin-bottom: 18px;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-heading a {
+  color: var(--black);
+}
+
+.section-heading a:hover {
+  color: var(--red);
+}
+
+.section-heading::after {
+  content: '›';
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--mid-gray);
+  line-height: 1;
+}
+
+.news-section {
+  margin-bottom: 50px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--light-gray);
+  margin-bottom: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.03);
+}
+
+.card-category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--red);
+  margin-bottom: 5px;
+}
+
+.card-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.35;
+  color: var(--black);
+}
+
+.card-title:hover {
+  color: var(--red);
+}
+
+.card-author {
+  font-size: 0.8rem;
+  color: var(--mid-gray);
+  margin-top: 5px;
+}
+
+.article-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.article-date {
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.article-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--black);
+  margin-bottom: 15px;
+}
+
+.article-lead {
+  font-size: 1rem;
+  color: var(--dark-gray);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--red);
+  padding-left: 14px;
+}
+
+.article-image {
+  width: 100%;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  height: auto;
+}
+
+.article-body {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--dark-gray);
+}
+
+.article-body p {
+  margin-bottom: 18px;
+}
+
+.article-body a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+footer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--mid-gray);
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logo-text {
+    font-size: 1.6rem;
+  }
+
+  nav a {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .article-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+}
+/* ==========================================================================
+   STILOVI ZA FORMU (unos.php) I PHP PRIKAZ (skripta.php)
+   ========================================================================== */
+
+.news-form {
+  margin-top: 20px;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-field-textual {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-field-textual:focus {
+  border-color: var(--red);
+  outline: none;
+}
+
+.checkbox-item {
+  margin-bottom: 25px;
+}
+
+.form-label-checkbox {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-reset {
+  padding: 10px 20px;
+  background: var(--light-gray);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.btn-reset:hover {
+  background: var(--border);
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+}
+
+.display-category {
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+}
+
+.display-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+  margin-bottom: 2px;
+}
+
+.display-image {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.display-image img {
+  width: 100%;
+  height: auto;
+}
+
+.display-about {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--red);
+  padding-left: 14px;
+}
+
+.display-content {
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--dark-gray);
+}
+
+/* ==========================================================================
+   STILOVI ZA STRANICU ARHIVA.PHP
+   ========================================================================== */
+.arhiva-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.clanak-kartica {
+    border: 1px solid #eee;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.clanak-kartica img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.clanak-kartica .kategorija-oznaka {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #d0021b;
+    font-weight: bold;
+}
+
+.clanak-kartica h4 {
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.clanak-kartica h4 a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+.clanak-kartica h4 a:hover {
+    color: #d0021b;
+}
+
+.clanak-kartica p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.status-arhiva {
+    background: #ffeeba;
+    color: #856404;
+    padding: 3px 8px;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.status-aktivno {
+    background: #d4edda; 
+    color: #155724;
+    padding: 3px 8px;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 5px 10px;
+        font-size: 14px; 
+    }
+
+    .grid-kontejner, 
+    .news-section, 
+    .main-grid {
+        display: block !important;
+    }
+
+    .arhiva-grid {
+        grid-template-columns: 1fr !important; 
+        gap: 20px;
+    }
+
+    .clanak-kartica, 
+    .vijest-box, 
+    article {
+        width: 100% !important;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .clanak-kontejner, 
+    main {
+        padding: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .clanak-kontejner img, 
+    main img {
+        width: 100% !important;
+        height: auto !important; 
+    }
+
+    h1 {
+        font-size: 24px !important;
+    }
+
+    .form-wrapper, 
+    .login-wrapper, 
+    .admin-forma-kartica {
+        width: 90% !important;
+        margin: 20px auto !important;
+        padding: 15px !important;
+        box-sizing: border-box;
+    }
+
+    .gumb-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gumb-azuriraj, 
+    .gumb-izbrisi {
+        width: 100%; 
+        text-align: center;
+    }
+
+    footer {
+        padding: 15px 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    
+    .header-inner {
+        padding: 10px 5px !important;
+    }
+
+    nav {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;   
+        gap: 8px !important;          
+        margin-top: 12px !important;
+        width: 100% !important;
+    }
+
+    nav a {
+        display: block !important;
+        width: 85% !important;   
+        text-align: center !important;     
+        padding: 8px 10px !important;      
+        font-size: 13px !important;     
+        background-color: #f5f5f5;        
+        border: 1px solid #ddd;
+        border-radius: 4px;             
+        box-sizing: border-box;
+    }
+
+    nav a.active, nav a:hover {
+        background-color: #d0021b !important; 
+        color: #fff !important;
+        border-color: #d0021b !important;
+    }
+
+    main {
+        padding: 10px 5px !important;
+    }
+
+    h2 {
+        font-size: 20px !important;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    h4 {
+        font-size: 16px !important;
+    }
+
+    p, span, label {
+        font-size: 13px !important;
+    }
+
+    .form-wrapper, 
+    .login-wrapper, 
+    .admin-forma-kartica {
+        width: 95% !important;
+        padding: 10px !important;
+        margin: 10px auto !important;
+    }
+
+    .form-field-textual,
+    .admin-input-text,
+    .admin-textarea,
+    .admin-select {
+        padding: 6px !important;
+        font-size: 13px !important;
+    }
+
+    #slanje,
+    .btn-submit,
+    .gumb-azuriraj, 
+    .gumb-izbrisi {
+        padding: 8px 10px !important;
+        font-size: 13px !important;
+    }
+
+    .admin-forma-kartica img {
+        width: 100px !important;
+    }
+}
+
+
+
+
+
+
